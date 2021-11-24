@@ -4,23 +4,11 @@ xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/
 id="WebApp_ID" 
 version="4.0">
   <display-name>servlet-demo</display-name>
-  <context-param>
-  	<param-name>company-number</param-name>
-  	<param-value>8956321</param-value>
-  </context-param>
-  
-  <context-param>
-  	<param-name>company-name</param-name>
-  	<param-value>IBM</param-value>
-  </context-param>
   
   <welcome-file-list>
   	<welcome-file>StudentControllerServlet</welcome-file>
   	<welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>
     <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
 </web-app>
