@@ -1,4 +1,4 @@
-package com.itsoftware.servlet.student;
+package com.itsoftware.student;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

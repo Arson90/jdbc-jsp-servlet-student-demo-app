@@ -1,4 +1,4 @@
-package com.itsoftware.servlet.student;
+package com.itsoftware.student;
 
 public class Student {
 	private int idStudent;
