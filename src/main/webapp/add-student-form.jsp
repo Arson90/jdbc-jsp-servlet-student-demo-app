@@ -1,11 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html>
 <head>
 	<meta charset="UTF-8">
 	<title>Insert title here</title>
-	
 	<link type="text/css" rel="stylesheet" href="css/style.css">
 	<link type="text/css" rel="stylesheet" href="css/add-student-style.css">
 </head>
@@ -17,11 +14,8 @@
 	</div>
 	<div id="container">
 		<h3>Add Student</h3>
-		
-		<form action="StudentControllerServlet" method="get">
-		
+		<form action="student-controller-servlet" method="get">
 			<input type="hidden" name="command" value="ADD">
-			
 			<table>
 				<tbody>
 					<tr>
@@ -51,10 +45,8 @@
 				</tbody>
 			</table>
 		</form>
-		
 		<div style="clear: both;"></div>
-		
-		<p><a href="StudentControllerServlet">Back_To_List</a></p>
+		<p><a href="student-controller-servlet">Back_To_List</a></p>
 	</div>
 </body>
 </html>
