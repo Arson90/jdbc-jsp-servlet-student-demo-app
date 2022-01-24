@@ -22,13 +22,13 @@ public class StudentControllerServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response){
 		try {
-			String commandFromAddStudentForm = request.getParameter("command");
+			String commandFromJSP = request.getParameter("command");
 
-			if(commandFromAddStudentForm == null) {
-				commandFromAddStudentForm = "LIST";
+			if(commandFromJSP  == null) {
+				commandFromJSP  = "LIST";
 			}
 			
-			switch (commandFromAddStudentForm) {
+			switch (commandFromJSP) {
 				case "ADD":
 					addStudent(request, response);
 					break;
@@ -49,10 +49,15 @@ public class StudentControllerServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 	}
-	
-	private void deleteStudent(HttpServletRequest request, HttpServletResponse response) throws ClassNotFoundException, SQLException, ServletException, IOException {
-		int studentId = Integer.parseInt(request.getParameter("studentId"));
-		studentDataUtil.deleteStudentById(studentId);
+
+	private void addStudent(HttpServletRequest request, HttpServletResponse response) throws ClassNotFoundException, SQLException, ServletException, IOException {
+		String firstName = request.getParameter("firstName");
+		String lastName = request.getParameter("lastName");
+		String email = request.getParameter("email");
+		int studentBookNumber = Integer.parseInt(request.getParameter("studentBookNumber"));
+
+		Student tempStudent = new Student(firstName, lastName, email, studentBookNumber);
+		studentDataUtil.insertStudent(tempStudent);
 		listStudents(request, response);
 	}
 
@@ -61,6 +66,13 @@ public class StudentControllerServlet extends HttpServlet {
 		Student student = studentDataUtil.loadStudent(studentId);
 		request.setAttribute("student", student);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/update-student-form.jsp");
+		dispatcher.forward(request, response);
+	}
+
+	private void listStudents(HttpServletRequest request, HttpServletResponse response) throws ClassNotFoundException, SQLException, ServletException, IOException {
+		List<Student> student = studentDataUtil.getStudentList();
+		request.setAttribute("students", student);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/view-student.jsp");
 		dispatcher.forward(request, response);
 	}
 
@@ -76,21 +88,9 @@ public class StudentControllerServlet extends HttpServlet {
 		listStudents(request, response);
 	}
 
-	private void addStudent(HttpServletRequest request, HttpServletResponse response) throws ClassNotFoundException, SQLException, ServletException, IOException {
-		String firstName = request.getParameter("firstName");
-		String lastName = request.getParameter("lastName");
-		String email = request.getParameter("email");
-		int studentBookNumber = Integer.parseInt(request.getParameter("studentBookNumber"));
-		
-		Student tempStudent = new Student(firstName, lastName, email, studentBookNumber);
-		studentDataUtil.insertStudent(tempStudent);
+	private void deleteStudent(HttpServletRequest request, HttpServletResponse response) throws ClassNotFoundException, SQLException, ServletException, IOException {
+		int studentId = Integer.parseInt(request.getParameter("studentId"));
+		studentDataUtil.deleteStudentById(studentId);
 		listStudents(request, response);
-	}
-	
-	private void listStudents(HttpServletRequest request, HttpServletResponse response) throws ClassNotFoundException, SQLException, ServletException, IOException {
-		List<Student> student = studentDataUtil.getStudentList();
-		request.setAttribute("students", student);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/view-student.jsp");
-		dispatcher.forward(request, response);
 	}
 }

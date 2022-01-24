@@ -3,22 +3,22 @@
 <html>
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Insert title here</title>
-	<link type="text/css" rel="stylesheet" href="css/style.css">
-	<link type="text/css" rel="stylesheet" href="css/add-student-style.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body>
-	<div id="wrapper">
-		<div id="header">
-			<h2>Student List</h2>
-		</div>
-	</div>
-	<div id="container">
-		<h3>Update Student</h3>
+	<div class="container">
+	    <div class="text-center">
+    		<h1>Student List</h1>
+    	</div>
+    	<div>
+    	    <h2>Update Student</h2>
+    	</div>
 		<form action="student-controller-servlet" method="get">
 			<input type="hidden" name="command" value="UPDATE">
 			<input type="hidden" name="studentId" value="${student.idStudent}">
-			<table>
+			<table class="table table-dark table-striped">
 				<tbody>
 					<tr>
 						<td><label>First Name</label></td>
@@ -48,7 +48,10 @@
 			</table>
 		</form>
 		<div style="clear: both;"></div>
-		<p><a href="student-controller-servlet">Back_To_List</a></p>
+		    <a class="btn btn-dark btn-lg position-absolute top-50 start-50 translate-middle"
+        		href="student-controller-servlet"
+        		role="button">Back To Student List
+        	</a>
 	</div>
 </body>
 </html>

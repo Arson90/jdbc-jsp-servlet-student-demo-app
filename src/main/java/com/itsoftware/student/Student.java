@@ -6,9 +6,11 @@ public class Student {
 	private String lastName;
 	private String email;
 	private int studentBookNumber;
-	
+
+	public Student () {
+	}
+
 	public Student(String firstName, String lastName, String email, int studentBookNumber) {
-		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
@@ -16,7 +18,6 @@ public class Student {
 	}
 	
 	public Student(int idStudent, String firstName, String lastName, String email, int studentBookNumber) {
-		super();
 		this.idStudent = idStudent;
 		this.firstName = firstName;
 		this.lastName = lastName;
