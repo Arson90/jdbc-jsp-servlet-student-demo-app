@@ -15,7 +15,7 @@
     	<div>
     	    <h2>Update Student</h2>
     	</div>
-		<form action="student-controller-servlet" method="get">
+		<form action="student-servlet" method="get">
 			<input type="hidden" name="command" value="UPDATE">
 			<input type="hidden" name="studentId" value="${student.idStudent}">
 			<table class="table table-dark table-striped">
@@ -49,7 +49,7 @@
 		</form>
 		<div style="clear: both;"></div>
 		    <a class="btn btn-dark btn-lg position-absolute top-50 start-50 translate-middle"
-        		href="student-controller-servlet"
+        		href="student-servlet"
         		role="button">Back To Student List
         	</a>
 	</div>
