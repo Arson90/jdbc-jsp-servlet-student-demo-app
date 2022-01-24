@@ -24,7 +24,7 @@ public class StudentDataUtil {
 		return connection;
 	}
 
-	public List<Student> getStudentList() throws ClassNotFoundException, SQLException {
+	public List<Student> getStudentList() throws SQLException {
 		String selectQuerySQL = "SELECT * FROM student";
 		List<Student> students = new ArrayList<>();
 		Connection connection = null;
@@ -56,7 +56,7 @@ public class StudentDataUtil {
 		return students;
 	}
 	
-	public void insertStudent(Student student) throws  ClassNotFoundException, SQLException {
+	public void insertStudent(Student student) throws SQLException {
 		String insertQuerySQL = "INSERT INTO student (first_name, last_name, email, student_book_number) " +
 				"VALUES (?, ?, ?, ?);";
 		Connection connection = null;
@@ -78,7 +78,7 @@ public class StudentDataUtil {
 		} 
 	}
 	
-	public Student loadStudent(int studentId) throws ClassNotFoundException, SQLException {
+	public Student loadStudent(int studentId) throws SQLException {
 		String selectByIdQuerySQL = "SELECT * FROM student WHERE id_student = ?;";
 		Student tempStudent = null;
 		Connection connection = null;
@@ -109,7 +109,7 @@ public class StudentDataUtil {
 		return tempStudent;
 	}
 	
-	public void updateStudentById(Student student) throws ClassNotFoundException, SQLException {
+	public void updateStudentById(Student student) throws SQLException {
 		String updateStudentByIdQuerySQL = "UPDATE student SET first_name = ?, last_name = ?, email = ?, student_book_number = ? WHERE id_student = ?;";
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
@@ -131,7 +131,7 @@ public class StudentDataUtil {
 		}
 	}
 	
-	public void deleteStudentById(int studentId) throws SQLException, ClassNotFoundException {
+	public void deleteStudentById(int studentId) throws SQLException {
 		String deleteStudentByIdQuerySQL = "DELETE FROM student WHERE id_student = ?;";
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
@@ -149,7 +149,7 @@ public class StudentDataUtil {
 		}
 	}
 	
-	private static void closeResultSet(ResultSet resultSet) throws ClassNotFoundException, SQLException{
+	private static void closeResultSet(ResultSet resultSet) throws SQLException{
         if (resultSet != null) {
             try {
                 resultSet.close();
@@ -169,7 +169,7 @@ public class StudentDataUtil {
         }
     }
 
-    private  static void closeConnection(Connection connection) throws ClassNotFoundException, SQLException{
+    private  static void closeConnection(Connection connection) throws SQLException{
         if (connection != null) {
             try {
                 connection.close();

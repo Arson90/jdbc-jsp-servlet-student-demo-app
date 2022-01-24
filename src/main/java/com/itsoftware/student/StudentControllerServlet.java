@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/student-controller-servlet")
+@WebServlet("/student-servlet")
 public class StudentControllerServlet extends HttpServlet {
     private StudentDataUtil studentDataUtil;
 
