@@ -35,5 +35,5 @@ Example webservice where I used connection to MySQL using JDBC. There is a servl
 
 ## Installing Tools
 ### Linux
-* This is a [link]() how to install Intellij_IDEA and JDK
-* This is a [link]() how to install MySQL Server and MySQL Workbench
+* This is a [link](https://github.com/Arson90/installation-intellij-idea-and-jdk-linux) how to install Intellij_IDEA and JDK
+* This is a [link](https://github.com/Arson90/installation-mysql-server-and-mysql-workbench-linux) how to install MySQL Server and MySQL Workbench
