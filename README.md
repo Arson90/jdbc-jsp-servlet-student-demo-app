@@ -8,8 +8,8 @@ Example webservice where I used connection to MySQL using JDBC. There is a servl
 * [JSP](#jsp)
 * [Prerequisite](#prerequisite)
 * [Installing Tools](#installing-tools)
-* [MySQL](*mysql)
-* [Functionality](*functionality)
+* [MySQL](#mysql)
+* [Functionality](#functionality)
   
 ## Architecture Diagram
 ![ArchitectureDiagram](https://user-images.githubusercontent.com/37801354/150788631-458788ad-f4b9-4c8c-9187-3c9a6f40544e.jpg)
