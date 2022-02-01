@@ -8,6 +8,7 @@ Example webservice where I used connection to MySQL using JDBC. There is a servl
 * [JSP](#jsp)
 * [Prerequisite](#prerequisite)
 * [Installing Tools](#installing-tools)
+* [MySQL](*mysql)
   
 ## Architecture Diagram
 ![ArchitectureDiagram](https://user-images.githubusercontent.com/37801354/150788631-458788ad-f4b9-4c8c-9187-3c9a6f40544e.jpg)
@@ -37,3 +38,42 @@ Example webservice where I used connection to MySQL using JDBC. There is a servl
 ### Linux
 * This is a [link](https://github.com/Arson90/installation-intellij-idea-and-jdk-linux) how to install Intellij_IDEA and JDK
 * This is a [link](https://github.com/Arson90/installation-mysql-server-and-mysql-workbench-linux) how to install MySQL Server and MySQL Workbench
+
+## MySQL
+1. Created example user and granted all provileges to DB.
+```
+CREATE USER 'webstudent'@'localhost' IDENTIFIED BY 'webstudent';
+```
+```
+GRANT ALL PRIVILEGES ON * . * TO 'webstudent'@'localhost';
+```
+2. Created db and schema.
+```
+CREATE DATABASE IF NOT EXISTS web_student;
+```
+```
+DROP TABLE IF EXISTS student;
+```
+```
+CREATE TABLE student (
+    id_student INT NOT NULL AUTO_INCREMENT,
+    first_name VARCHAR(255) NOT NULL,
+    last_name VARCHAR(255) NOT NULL,
+    email VARCHAR(255),
+    student_book_number INT,
+    PRIMARY KEY(id_student)
+);
+```
+3. Generated examples data, saved as a CSV file and loaded to DB.
+```
+LOAD DATA LOCAL INFILE 'file existing csv file, example: /home/test/Desktop/student_data.csv'
+INTO TABLE student
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+```
+IF YOU HAVE A PROBLEM YOU CAN LOG IN TO MYSQL IN TERMINAL USING THIS
+```
+mysql --local-infile=1 -u root -p
+```
+AND THEN YOU CAN TRY LOAD DATA USING TERMINAL.
