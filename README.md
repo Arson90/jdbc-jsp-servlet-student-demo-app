@@ -9,6 +9,7 @@ Example webservice where I used connection to MySQL using JDBC. There is a servl
 * [Prerequisite](#prerequisite)
 * [Installing Tools](#installing-tools)
 * [MySQL](*mysql)
+* [Functionality](*functionality)
   
 ## Architecture Diagram
 ![ArchitectureDiagram](https://user-images.githubusercontent.com/37801354/150788631-458788ad-f4b9-4c8c-9187-3c9a6f40544e.jpg)
@@ -77,3 +78,28 @@ IF YOU HAVE A PROBLEM YOU CAN LOG IN TO MYSQL IN TERMINAL USING THIS
 mysql --local-infile=1 -u root -p
 ```
 AND THEN YOU CAN TRY LOAD DATA USING TERMINAL.
+
+## Functionality
+### Used query
+* Adding student:
+```
+String insertQuerySQL = "INSERT INTO student (first_name, last_name, email, student_book_number) " + "VALUES (?, ?, ?, ?);";
+```
+* Reading students
+```
+String selectQuerySQL = "SELECT * FROM student";
+```
+* Reading student by id
+```        
+String selectByIdQuerySQL = "SELECT * FROM student WHERE id_student = ?;";
+```
+* Updating student by id
+```
+String updateStudentByIdQuerySQL = "UPDATE student SET first_name = ?, last_name = ?, email = ?, student_book_number = ? WHERE id_student = ?;";
+```
+* Removing student by id
+```
+String deleteStudentByIdQuerySQL = "DELETE FROM student WHERE id_student = ?;";
+```
+### View
+![obraz](https://user-images.githubusercontent.com/37801354/151953377-7343f3ab-a6cb-4e3d-9444-1ac2e424fae1.png)
