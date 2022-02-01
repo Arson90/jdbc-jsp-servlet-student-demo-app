@@ -80,7 +80,7 @@ mysql --local-infile=1 -u root -p
 AND THEN YOU CAN TRY LOAD DATA USING TERMINAL.
 
 ## Functionality
-### Used query
+### Used queries
 * Adding student:
 ```
 String insertQuerySQL = "INSERT INTO student (first_name, last_name, email, student_book_number) " + "VALUES (?, ?, ?, ?);";
